@@ -1,0 +1,249 @@
+﻿<!--
+Simple Website (index.html)
+Instructions:
+1. Save this file as index.html inside a folder.
+2. In Visual Studio (full IDE):
+   - Create a new project: "ASP.NET Empty Web Application" (or open the folder with File > Open > Folder).
+   - Add this index.html to the project (if needed). Right-click index.html and choose "Set as Start Page".
+   - Press F5 to run with IIS Express, or right-click the file and choose "View in Browser".
+3. Or just open index.html directly in any browser.
+
+You can edit content below to customize text, images, colors.
+-->
+
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trang web mẫu - Visual Studio</title>
+    <style>
+        :root {
+            --accent: #0ea5a4;
+            --dark: #0f172a;
+            --muted: #94a3b8
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: Inter,Segoe UI,Roboto,Arial,sans-serif;
+            margin: 0;
+            color: var(--dark);
+            background: linear-gradient(180deg,#f8fafc,white)
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid #e6eef5
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700
+        }
+
+            .brand .logo {
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
+                background: var(--accent);
+                display: inline-grid;
+                place-items: center;
+                color: white
+            }
+
+        nav a {
+            margin-left: 14px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600
+        }
+
+        .hero {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding: 40px 0
+        }
+
+            .hero .left {
+                flex: 1
+            }
+
+            .hero h1 {
+                font-size: 28px;
+                margin: 0 0 12px
+            }
+
+            .hero p {
+                color: var(--muted);
+                margin: 0 0 18px
+            }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white
+        }
+
+        .btn-ghost {
+            border: 1px solid #d7e9e9;
+            color: var(--accent)
+        }
+
+        .card-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 14px;
+            margin-top: 28px
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 6px 18px rgba(12,24,40,0.06)
+        }
+
+        .features {
+            padding: 28px 0
+        }
+
+        footer {
+            border-top: 1px solid #eef3f8;
+            padding: 20px 0;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        /* responsive */
+        @media(max-width:720px) {
+            .hero {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            nav a {
+                display: none
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <div class="brand">
+                <div class="logo">WS</div>
+                <div>
+                    <div>MySite</div>
+                    <small style="color:var(--muted);font-weight:500">Trang web mẫu</small>
+                </div>
+            </div>
+            <nav>
+                <a href="#features">Tính năng</a>
+                <a href="#about">Giới thiệu</a>
+                <a href="#contact">Liên hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="left">
+                <h1>Trang web HTML đơn giản — khởi động nhanh</h1>
+                <p>Trang này là mẫu bắt đầu: có header, hero, thẻ tính năng và form liên hệ. Bạn có thể mở bằng Visual Studio, chỉnh sửa rồi chạy ngay.</p>
+                <div>
+                    <a class="btn btn-primary" href="#contact">Bắt đầu</a>
+                    <a class="btn btn-ghost" href="#features">Xem tính năng</a>
+                </div>
+            </div>
+            <div class="right" style="width:320px">
+                <div style="background:linear-gradient(135deg,#f0f9f9,#ffffff);border-radius:14px;padding:18px;box-shadow:0 8px 28px rgba(2,6,23,0.04)">
+                    <h3 style="margin:0 0 6px">Thông tin dự án</h3>
+                    <p style="margin:0;color:var(--muted)">Loại: HTML tĩnh • Công cụ: Visual Studio • Sẵn sàng tùy chỉnh</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Những gì có sẵn</h2>
+            <div class="card-row">
+                <div class="card">
+                    <h4>Responsive</h4>
+                    <p style="color:var(--muted)">Giao diện thích ứng trên điện thoại và máy tính.</p>
+                </div>
+                <div class="card">
+                    <h4>Thiết kế sạch</h4>
+                    <p style="color:var(--muted)">Mẫu tối giản, dễ thay đổi màu sắc, font và bố cục.</p>
+                </div>
+                <div class="card">
+                    <h4>Form liên hệ</h4>
+                    <p style="color:var(--muted)">Form mẫu (không gửi mail) để bạn nối backend sau.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" style="padding-top:8px">
+            <h2>Giới thiệu</h2>
+            <p style="color:var(--muted)">Bạn có thể thêm nhiều trang, kết hợp CSS/JS, hoặc xuất sang ASP.NET nếu muốn tích hợp server-side.</p>
+        </section>
+
+        <section id="contact" style="margin-top:18px">
+            <h2>Liên hệ</h2>
+            <div style="display:flex;gap:16px;flex-wrap:wrap">
+                <form class="card" style="flex:1;min-width:260px" onsubmit="event.preventDefault();alert('Form mẫu — tích hợp backend để gửi thực sự.');">
+                    <label>Họ tên<br><input required style="width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #e6eef5" placeholder="Nguyễn Văn A"></label>
+                    <br><br>
+                    <label>Email<br><input required type="email" style="width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #e6eef5" placeholder="name@example.com"></label>
+                    <br><br>
+                    <label>Nội dung<br><textarea required style="width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #e6eef5" rows="4" placeholder="Nội dung liên hệ"></textarea></label>
+                    <br><br>
+                    <button class="btn btn-primary" type="submit">Gửi</button>
+                </form>
+
+                <div style="flex:1;min-width:220px">
+                    <div class="card">
+                        <h4>Thông tin</h4>
+                        <p style="color:var(--muted)">Địa chỉ: Thành phố của bạn<br>Điện thoại: 0123-456-789</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+                <div>© <strong>MySite</strong> — 2025</div>
+                <div style="color:var(--muted)">Made with ❤️ • Simple HTML starter</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
